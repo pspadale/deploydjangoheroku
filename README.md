@@ -103,9 +103,9 @@
 23. Make sure you have changed **web: waitress-serve --port=8000 inner_project_folder_name.wsgi:application** to **web: waitress-serve --port=$PORT inner_project_folder_name.wsgi:application** in **Procfile** before pushing to heroku
    
    if this don't work then try this one: 
-   ```javascript
+    ```javascript
       web: waitress-serve --listen=*:$PORT webapp.wsgi:application
-   ```
+    ```
 
 24. Run below command
     ```javascript
@@ -113,7 +113,7 @@
       git commit -m "any comment"
       git push heroku master
     ```
-  25. Done
+25. Done
   
   
 ## Common Error while Deploying
