@@ -101,7 +101,8 @@
       pip freeze > requirements.txt
     ```
 23. Make sure you have changed **web: waitress-serve --port=8000 inner_project_folder_name.wsgi:application** to **web: waitress-serve --port=$PORT inner_project_folder_name.wsgi:application** in **Procfile** before pushing to heroku
-   if this done work then try this one: 
+   
+   if this don't work then try this one: 
    ```javascript
       web: waitress-serve --listen=*:$PORT webapp.wsgi:application
    ```
