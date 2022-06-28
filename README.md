@@ -42,13 +42,13 @@
       ALLOWED_HOSTS = ['*']
      ```
 15. Create a file named **Procfile** then write below code in the file
-   ```javascript
+    ```javascript
       web: waitress-serve --port=8000 inner_project_folder_name.wsgi:application
-   ```
-   if this done work then try this one: 
-   ```javascript
+    ```
+   if this don't work then try this one: 
+    ```javascript
       web: waitress-serve --listen=127.0.0.1:8000 webapp.wsgi:application
-   ```
+    ```
 16. Run below command - This will use Procfile to run the project. You will see an URL open it if everything file you will see project in browser 
     ```javascript
       heroku local
