@@ -44,6 +44,10 @@
 15. Create a file named **Procfile** then write below code in the file
     ```javascript
       web: waitress-serve --port=8000 inner_project_folder_name.wsgi:application
+   ```
+   if this done work then try this one: 
+   ```javascript
+      web: waitress-serve --listen=127.0.0.1:8000 webapp.wsgi:application
     ```
 16. Run below command - This will use Procfile to run the project. You will see an URL open it if everything file you will see project in browser 
     ```javascript
@@ -54,6 +58,11 @@
       DEBUG = False
       ALLOWED_HOSTS = ['heroku_app_name.herokuapp.com', 'localhost']
     ```
+    There is sometimes a error relating to CSRF, then try this one as well
+    ```python
+      CSRF_TRUSTED_ORIGINS = ['https://heroku_app_name.herokuapp.com']
+    ```
+    
     > As you have created an Heroku App so you have your app url e.g. https://heroku_app_name.herokuapp.com/ You can find it follwoing Heroku's Dashboard -> Setting
 18. We will also create Config Var for Django Project's Secret Key by following
     1. Copy SECRET_KEY from Django's settings.py File
@@ -89,6 +98,11 @@
       pip freeze > requirements.txt
     ```
 23. Make sure you have changed **web: waitress-serve --port=8000 inner_project_folder_name.wsgi:application** to **web: waitress-serve --port=$PORT inner_project_folder_name.wsgi:application** in **Procfile** before pushing to heroku
+   if this done work then try this one: 
+   ```javascript
+      web: waitress-serve --listen=*:$PORT webapp.wsgi:application
+    ```
+
 24. Run below command
     ```javascript
       git add .
