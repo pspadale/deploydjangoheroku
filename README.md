@@ -49,15 +49,18 @@
     ```javascript
       web: waitress-serve --listen=127.0.0.1:8000 webapp.wsgi:application
     ```
+    
 16. Run below command - This will use Procfile to run the project. You will see an URL open it if everything file you will see project in browser 
     ```javascript
       heroku local
     ```
+    
 17. Now go to your Django project's settings and do below change
     ```python
       DEBUG = False
       ALLOWED_HOSTS = ['heroku_app_name.herokuapp.com', 'localhost']
     ```
+    
     There is sometimes a error relating to CSRF, then try this one as well
     ```python
       CSRF_TRUSTED_ORIGINS = ['https://heroku_app_name.herokuapp.com']
